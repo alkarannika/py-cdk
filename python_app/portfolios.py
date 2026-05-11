@@ -18,7 +18,7 @@ class VpcProduct:
                 sc.CloudFormationProductVersion(
                     product_version_name="v1.0.0",
                     cloud_formation_template=sc.CloudFormationTemplate.from_asset(
-                        path.join(path.dirname(__file__), "templates", "vpc.v1.0.0.yaml")
+                        path.join(path.dirname(__file__), "templates", "vpc-template.yaml")
                     ),
                 ),
             ],
@@ -48,7 +48,7 @@ class S3BucketProduct:
                 sc.CloudFormationProductVersion(
                     product_version_name="v1.0.0",
                     cloud_formation_template=sc.CloudFormationTemplate.from_asset(
-                        path.join(path.dirname(__file__), "templates", "s3-bucket.v1.0.0.yaml")
+                        path.join(path.dirname(__file__), "templates", "s3-template.yaml")
                     ),
                 ),
             ],
@@ -80,7 +80,7 @@ class Ec2InstanceProduct:
                     cloud_formation_template=sc.CloudFormationTemplate.from_asset(
                         path.join(path.dirname(__file__), "templates", "ec2-instance.v1.0.0.yaml")
                     ),
-                )
+                ),
             ],
             description=f"Provisions EC2 Instance under {team} guidance",
             support_email="platform-team@example.com",
@@ -110,7 +110,7 @@ class LambdaFunctionProduct:
                     cloud_formation_template=sc.CloudFormationTemplate.from_asset(
                         path.join(path.dirname(__file__), "templates", "lambda-function.v1.0.0.yaml")
                     ),
-                )
+                ),
             ],
             description=f"Provisions Lambda Function under {team} guidance",
             support_email="platform-team@example.com",
@@ -142,7 +142,7 @@ class EssentialPortfolio(Stack):
 
         # Add products to the portfolio
         VpcProduct(self, "Platform Team", portfolio)
-        Ec2InstanceProduct(self, "Platform Team", portfolio)
+        # Ec2InstanceProduct(self, "Platform Team", portfolio)  # Uncomment when template is ready
 
 
 class SandboxPortfolio(Stack):
@@ -160,7 +160,7 @@ class SandboxPortfolio(Stack):
 
         # Add products to the portfolio
         S3BucketProduct(self, "Platform Team", portfolio)
-        LambdaFunctionProduct(self, "Platform Team", portfolio)
+        # LambdaFunctionProduct(self, "Platform Team", portfolio)  # Uncomment when template is ready
 
 
 

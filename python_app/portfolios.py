@@ -18,7 +18,8 @@ class VpcProduct:
                 sc.CloudFormationProductVersion(
                     product_version_name="v1.0.0",
                     cloud_formation_template=sc.CloudFormationTemplate.from_asset(
-                        path.join(path.dirname(__file__), "templates", "vpc-template.yaml")
+                        path.join(path.dirname(__file__), "templates", "vpc-template.yaml"),
+                        display_name='Asset_vpc1'
                     ),
                 ),
             ],
@@ -48,7 +49,8 @@ class S3BucketProduct:
                 sc.CloudFormationProductVersion(
                     product_version_name="v1.0.0",
                     cloud_formation_template=sc.CloudFormationTemplate.from_asset(
-                        path.join(path.dirname(__file__), "templates", "s3-template.yaml")
+                        path.join(path.dirname(__file__), "templates", "s3-template.yaml"),
+                        display_name='Asset_s31'
                     ),
                 ),
             ],
@@ -78,7 +80,8 @@ class Ec2InstanceProduct:
                 sc.CloudFormationProductVersion(
                     product_version_name="v1.0.0",
                     cloud_formation_template=sc.CloudFormationTemplate.from_asset(
-                        path.join(path.dirname(__file__), "templates", "ec2-instance.v1.0.0.yaml")
+                        path.join(path.dirname(__file__), "templates", "ec2-instance.v1.0.0.yaml"),
+                        display_name='Asset_ec21'
                     ),
                 ),
             ],
@@ -108,7 +111,8 @@ class LambdaFunctionProduct:
                 sc.CloudFormationProductVersion(
                     product_version_name="v1.0.0",
                     cloud_formation_template=sc.CloudFormationTemplate.from_asset(
-                        path.join(path.dirname(__file__), "templates", "lambda-function.v1.0.0.yaml")
+                        path.join(path.dirname(__file__), "templates", "lambda-function.v1.0.0.yaml"),
+                        display_name='Asset_lambda1'
                     ),
                 ),
             ],
